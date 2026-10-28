@@ -1,11 +1,13 @@
 # Tiny Tapeout project information
+yaml_version: 6
+
 project:
   title:        "NTT Single Butterfly Accelerator"
   author:       "Nguyen Tuan Minh"
   discord:      ""
   description:  "NTT Single Butterfly Hardware Accelerator for Sky130"
   language:     "Verilog"
-  clock_hz:     75000000                 # Tần số 75 MHz
+  clock_hz:     75000000
 
   # Khai báo khung kích thước 2x2
   tiles:        "2x2"
@@ -25,7 +27,7 @@ project:
     - "ntt_top.v"
     - "ntt_mem.v"
 
-# Pinout mapping (có thể để trống hoặc điền mô tả chân)
+# Pinout mapping
 pinout:
   ui[0]: "start"
   ui[1]: "sel_byte"
