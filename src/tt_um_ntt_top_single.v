@@ -53,7 +53,7 @@ module tt_um_ntt_top_single (
         .mem_wr_data_b (mem_wr_data_b)
     );
 
-    // Khởi tạo Bộ nhớ hệ số (DFF / Standard Cell)
+    // Khởi tạo Bộ nhớ hệ số ntt_mem (nối đầy đủ cả cổng host)
     ntt_mem u_ntt_mem (
         .clk           (clk),
         .rd_idx_a      (mem_rd_idx_a),
@@ -64,11 +64,15 @@ module tt_um_ntt_top_single (
         .wr_idx_a      (mem_wr_idx_a),
         .wr_idx_b      (mem_wr_idx_b),
         .wr_data_a     (mem_wr_data_a),
-        .wr_data_b     (mem_wr_data_b)
+        .wr_data_b     (mem_wr_data_b),
+        // Khóa giao diện ghi từ host
+        .host_we       (1'b0),
+        .host_idx      (8'b0),
+        .host_wdata    (12'b0),
+        .host_rdata    ()
     );
 
     // Mapping chân ra cho chip Tiny Tapeout
-    // uo_out[0]: done, uo_out[1]: busy, uo_out[7:2]: 6-bit của dữ liệu đọc
     assign uo_out = {mem_rd_data_a[5:0], busy, done};
 
 endmodule
