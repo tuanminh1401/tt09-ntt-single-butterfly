@@ -49,7 +49,7 @@ pinout:
   uo[6]: "data_out[6]"
   uo[7]: "data_out[7]"
 
-  # Bidirectional pins (bắt buộc khai báo đủ từ 0 đến 7)
+  # Bidirectional pins
   uio[0]: ""
   uio[1]: ""
   uio[2]: ""
@@ -58,13 +58,3 @@ pinout:
   uio[5]: ""
   uio[6]: ""
   uio[7]: ""
-
-  # Analog pins (bắt buộc khai báo đủ từ 0 đến 7)
-  ua[0]: ""
-  ua[1]: ""
-  ua[2]: ""
-  ua[3]: ""
-  ua[4]: ""
-  ua[5]: ""
-  ua[6]: ""
-  ua[7]: ""
