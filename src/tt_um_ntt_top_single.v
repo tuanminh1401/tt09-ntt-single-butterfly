@@ -19,7 +19,7 @@ module tt_um_ntt_top_single (
     wire start = ui_in[0];
     wire mode  = ui_in[1];
 
-    // Tín hiệu trạng thái
+    // Tín hiệu trạng thái từ ntt_top
     wire busy;
     wire done;
 
@@ -53,9 +53,10 @@ module tt_um_ntt_top_single (
         .mem_wr_data_b (mem_wr_data_b)
     );
 
-    // Khởi tạo Bộ nhớ hệ số ntt_mem (nối đầy đủ cả cổng host)
+    // Khởi tạo Bộ nhớ hệ số ntt_mem (đã nối khớp toàn bộ 15 chân)
     ntt_mem u_ntt_mem (
         .clk           (clk),
+        .busy          (busy),          // Nối chân busy từ ntt_top
         .rd_idx_a      (mem_rd_idx_a),
         .rd_idx_b      (mem_rd_idx_b),
         .rd_data_a     (mem_rd_data_a),
@@ -65,7 +66,6 @@ module tt_um_ntt_top_single (
         .wr_idx_b      (mem_wr_idx_b),
         .wr_data_a     (mem_wr_data_a),
         .wr_data_b     (mem_wr_data_b),
-        // Khóa giao diện ghi từ host
         .host_we       (1'b0),
         .host_idx      (8'b0),
         .host_wdata    (12'b0),
