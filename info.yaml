@@ -29,6 +29,7 @@ project:
 
 # Pinout mapping
 pinout:
+  # Dedicated inputs
   ui[0]: "start"
   ui[1]: "sel_byte"
   ui[2]: ""
@@ -38,6 +39,7 @@ pinout:
   ui[6]: ""
   ui[7]: ""
 
+  # Dedicated outputs
   uo[0]: "data_out_lsb/done"
   uo[1]: "data_out[1]"
   uo[2]: "data_out[2]"
@@ -46,3 +48,23 @@ pinout:
   uo[5]: "data_out[5]"
   uo[6]: "data_out[6]"
   uo[7]: "data_out[7]"
+
+  # Bidirectional pins (bắt buộc khai báo đủ từ 0 đến 7)
+  uio[0]: ""
+  uio[1]: ""
+  uio[2]: ""
+  uio[3]: ""
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+  # Analog pins (bắt buộc khai báo đủ từ 0 đến 7)
+  ua[0]: ""
+  ua[1]: ""
+  ua[2]: ""
+  ua[3]: ""
+  ua[4]: ""
+  ua[5]: ""
+  ua[6]: ""
+  ua[7]: ""
